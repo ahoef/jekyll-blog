@@ -1,6 +1,3 @@
-/**
- * Reset some basic elements
- */
 body, h1, h2, h3, h4, h5, h6,
 p, blockquote, pre, hr,
 dl, dd, ol, ul, figure {
@@ -8,18 +5,13 @@ dl, dd, ol, ul, figure {
     padding: 0;
 }
 
-
-
-/**
- * Basic styling
- */
 body {
     font-family: 'Lato', sans-serif;
     font-size: $base-font-size;
     line-height: $base-line-height;
     font-weight: 300;
     -webkit-text-size-adjust: 100%;
-      color: white;
+      color: $text-color;
       background: #cedce7; /* Old browsers */
       background: -moz-linear-gradient(top, #cedce7 0%, #bf97a6 100%); /* FF3.6+ */
       background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#cedce7), color-stop(100%,#bf97a6)); /* Chrome,Safari4+ */
@@ -28,7 +20,6 @@ body {
       background: -ms-linear-gradient(top, #cedce7 0%,#bf97a6 100%); /* IE10+ */
       background: linear-gradient(to bottom, #cedce7 0%,#bf97a6 100%); /* W3C */
       filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#cedce7', endColorstr='#bf97a6',GradientType=0 ); /* IE6-9 */
-      padding: 100px;
       letter-spacing: .01em;
 }
 
@@ -44,34 +35,11 @@ ul, ol, dl, figure,
     margin-bottom: $spacing-unit / 2;
 }
 
-
-
-/**
- * Images
- */
 img {
     max-width: 100%;
     vertical-align: middle;
 }
 
-
-
-/**
- * Figures
- */
-figure > img {
-    display: block;
-}
-
-figcaption {
-    font-size: $small-font-size;
-}
-
-
-
-/**
- * Lists
- */
 ul, ol {
     margin-left: $spacing-unit;
 }
@@ -83,23 +51,14 @@ li {
     }
 }
 
-
-
-/**
- * Headings
- */
 h1, h2, h3, h4, h5, h6 {
     font-weight: 300;
 }
 
-
-
-/**
- * Links
- */
 a {
     color: $brand-color;
     text-decoration: none;
+    border-bottom: 1px solid white;
 
     &:visited {
         color: darken($brand-color, 15%);
@@ -107,15 +66,10 @@ a {
 
     &:hover {
         color: $text-color;
-        text-decoration: underline;
+        border-bottom: none;
     }
 }
 
-
-
-/**
- * Blockquotes
- */
 blockquote {
     color: $grey-color;
     border-left: 4px solid $grey-color-light;
@@ -129,11 +83,6 @@ blockquote {
     }
 }
 
-
-
-/**
- * Code formatting
- */
 pre,
 code {
     font-size: 15px;
@@ -157,11 +106,6 @@ pre {
     }
 }
 
-
-
-/**
- * Wrapper
- */
 .wrapper {
     max-width: -webkit-calc(#{$content-width} - (#{$spacing-unit} * 2));
     max-width:         calc(#{$content-width} - (#{$spacing-unit} * 2));
@@ -179,11 +123,6 @@ pre {
     }
 }
 
-
-
-/**
- * Clearfix
- */
 %clearfix {
 
     &:after {
@@ -193,11 +132,6 @@ pre {
     }
 }
 
-
-
-/**
- * Icons
- */
 .icon {
 
     > svg {
