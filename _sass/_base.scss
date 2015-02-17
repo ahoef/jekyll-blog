@@ -35,6 +35,10 @@ ul, ol, dl, figure,
     margin-bottom: $spacing-unit / 2;
 }
 
+p {
+    margin-bottom: $spacing-unit;
+}
+
 img {
     max-width: 100%;
     vertical-align: middle;
