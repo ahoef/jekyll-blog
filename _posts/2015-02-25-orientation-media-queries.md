@@ -14,7 +14,7 @@ When building out designs that require different layouts on landscape/portrait t
 
 The pixel range that qualifies as portrait on a large tablet may qualify as landscape on a small tablet, and your designers could come after you in a huff for breaking their layouts. The line between the sizes of large phones, small tablets, large tablets, and small laptops is becoming increasingly blurry, and it seems like it'll only become more so as more devices hit the market. 
 
-Orientation media queries offer a more foolproof solution &mdash; as noted on the [W3 Docs][http://www.w3.org/TR/css3-mediaqueries/#orientation], an orientation value is determined based on the relationship of the height and width of the viewport. If the height is greater than or equal to the width, the orientation is portrait, otherwise it is landscape. Here's a basic example:
+Orientation media queries offer a more foolproof solution &mdash; as noted on the [W3 Docs](http://www.w3.org/TR/css3-mediaqueries/#orientation), an orientation value is determined based on the relationship of the height and width of the viewport. If the height is greater than or equal to the width, the orientation is portrait, otherwise it is landscape. Here's a basic example:
 
 {% highlight css %}
 @media (orientation: portrait) {
@@ -47,10 +47,6 @@ ul {
 }
 {% endhighlight %}
 
-I've really come around to using media queries with Sass in Foundation. http://foundation.zurb.com/docs/media-queries.html. They're super handy, especially if there are sizeable differences in the style of elements across mobile, tablet, & desktop, but you want to keep them close together in the file. Foundation's docs on this are great! 
-
-
-
-<!-- figure out syntax highlighting & links/img tag in markdown -->
+I've really come around to using media queries with Sass in Foundation. They're super handy, especially if there are sizeable differences in the style of elements across mobile, tablet, & desktop, but you want to keep them close together in the file. [Foundation's docs](http://foundation.zurb.com/docs/media-queries.html) on this are great! 
 
 
