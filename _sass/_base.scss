@@ -64,10 +64,6 @@ a {
     text-decoration: none;
     border-bottom: 1px solid white;
 
-    &:visited {
-        color: darken($brand-color, 15%);
-    }
-
     &:hover {
         color: $text-color;
         border-bottom: none;
