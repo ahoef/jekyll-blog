@@ -93,6 +93,13 @@ code {
     padding: 1px 5px;
 }
 
+code.terminal {
+    background-color: #E4E4E4;
+    color: #888;
+    display: block;
+    padding: 10px;
+}
+
 pre {
     padding: 8px 12px;
     overflow-x: scroll;
