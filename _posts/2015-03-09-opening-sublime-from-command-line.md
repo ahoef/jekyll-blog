@@ -6,12 +6,30 @@ categories: command line, sublime text, text editors, bash profile
 excerpt: If you use the command line for commiting files in version control, you probably also find yourself navigating through directories via the command line. Cd'ing into a folder and opening it in Sublime Text with a single short command can be a real handy workflow step &mdash; so here's how to do it! 
 ---
 
+If you use the command line for commiting files in version control, you probably also find yourself navigating through directories via the command line. Cd'ing into a folder and opening it in Sublime Text with a single short command can be a real handy workflow step. If you use a Mac, here are some simple instructions:
+
+Since you'll need to look at your bash profile, the first step is to configure your finder to show hidden files. If you are able to see hidden files, skip to this part!
+
+From the root directory in your terminal, enter
+
+<code class="terminal">
+$ defaults write com.apple.finder AppleShowAllFiles YES
+</code>
+
+Then, fully quit Finder to affect these changes by entering
+
+<code class="terminal">
+$ killall Finder
+</code>
+
+Now when you reopen Finder, you should see your hidden files faded in opacity.
+
+
+
+
 
 https://gist.github.com/olivierlacan/1195304
 
--osx disclaimer
-
--show hidden files on mac osx to look at bash profile
 
 -seems to be compatible with ST3
 
@@ -34,7 +52,7 @@ Which you'd then use like this:
 $ blastoff .
 </code>
 
-
+Again these steps are just for Mac users, but [this Scotch.io tutorial](https://scotch.io/tutorials/open-sublime-text-from-the-command-line-using-subl-exe-windows) looks like a good walkthrough for Windows users. 
 
 
 
