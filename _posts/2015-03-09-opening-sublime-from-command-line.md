@@ -6,9 +6,9 @@ categories: command line, sublime text, text editors, bash profile
 excerpt: If you use the command line for commiting files in version control, you probably also find yourself navigating through directories via the command line. Cd'ing into a folder and opening it in Sublime Text with a single short command can be a real handy workflow step &mdash; so here's how to do it! 
 ---
 
-If you use the command line for commiting files in version control, you probably also find yourself navigating through directories via the command line. Cd'ing into a folder and opening it in Sublime Text with a single short command can be a real handy workflow step. If you use a Mac, here are some simple instructions:
+If you use the command line for commiting files in version control, you probably also find yourself navigating through directories via the command line. Cd'ing into a folder and opening it in Sublime Text with a single short command can be a real handy workflow step. Here are two ways of setting it up on a Mac. 
 
-Since you'll need to look at your bash profile, the first step is to configure your finder to show hidden files. If you are able to see hidden files, skip this part!
+Since you'll need to look at your bash profile (more on that below), the first step is to configure your Finder to show hidden files. If you already see hidden files, skip this part!
 
 From the root directory in your terminal, enter
 
@@ -25,27 +25,25 @@ $ killall Finder
 Now when you reopen Finder, you should see your hidden files faded in opacity.
 
 
-So to set up this shortcut, there are a few different approaches to take. One approach is to set up an alias in your bash profile, and another is to create a symlink to Sublime's built-in command line tool. Both will get the job done!
+As mentioned, here are instructions for two different ways of setting up the terminal shortcut. I'm including two ways in case one doesn't work for you! 
 
-Approach #1 &mdash; Bash profile alias
+### Approach #1 &mdash; Bash Profile Alias ###
 
-An alias is what it sounds like- it's is nothing more than a custom keyboard shortcut for running a terminal command. Commonly aliases live in a file called .bash_profile, which is a file that houses custom settings for your computer. And commonly, .bash_profile is located at the root directory. Depending on whether you have a brand new computer or if you've inherited one, a .bash_profile may or may not exist.
+An alias in Unix shells is nothing more than a custom keyboard shortcut for running a terminal command. Commonly aliases live in a file called .bash_profile, which is a file that houses custom settings for your computer. And usually, .bash_profile is located at the root directory. Depending on whether you have a brand new computer or if you've inherited one, a .bash_profile may or may not exist.
 
-To check if a .bash_profile exists on your computer, go to your root directory:
+To check if a .bash_profile exists on your computer, go to your root directory and list all of the files, including hidden ones, because .bash_profile is a hidden dotfile::
 
 <code class="terminal">
 $ cd ~
 </code>
 
-Then, list all of the files, including hidden ones, because .bash_profile is a hidden dotfile:
-
 <code class="terminal">
 $ ls -a
 </code>
 
-If you see .bash_profile listed as a file in the directory, pop over to the finder and drag it into Sublime, or open it up in the default terminal text editor.
+If you see .bash_profile listed as a file in the directory, pop over to Finder and drag it into Sublime, or open it up in your default terminal text editor.
 
-If you don't see it, you can create it with this command:
+If you don't see the file, you can create it with this command:
 
 <code class="terminal">
 $ touch .bash_profile
@@ -53,9 +51,9 @@ $ touch .bash_profile
 
 So when the file is open in a text editor, we have to write an alias that says 'open this with Sublime'. So paste this in, and just remove the 2 if you are using Sublime Text 3:
 
-```
+<code style="padding: 10px;">
 alias sublime='open -a "Sublime Text 2"'
-```
+</code>
 
 Then, save out your changes to the file, and run this command to see your changes updated in the terminal:
 
@@ -77,19 +75,20 @@ $ sublime index.html
 
 The cool thing is that you can make your alias name anything you want&mdash; like 'blastoff', for example:
 
-```
+<code style="padding: 10px;">
 alias blastoff='open -a "Sublime Text 2"'
-```
+</code>
+
 <code class="terminal">
 $ blastoff index.html
 </code>
 
 
-Approach #2 &mdash; Symlink
+### Approach #2 &mdash; Symlink ###
 
-A symlink is similar to an alias; it's just a file that contains a reference to another file or folder. [Sublime Text's documentation](http://www.sublimetext.com/docs/2/osx_command_line.html) for using their command line tool for opening files suggests creating a symlink between the tool and a folder called ~/bin/subl. Most Mac users would already have a bin folder located in usr/local, above the root directory, so creating a new bin folder for this purpose isn't necessary.
+A symlink is similar to an alias; it's just a file that contains a reference to another file or folder. [Sublime Text's documentation](http://www.sublimetext.com/docs/2/osx_command_line.html) for using their command line tool suggests creating a symlink between the tool and a folder called ~/bin/subl. Most Mac users would already have a bin folder located in usr/local, above the root directory, so creating a new bin folder for this purpose isn't necessary.
 
-So, following [Olivier Lacan's Instructions](https://gist.github.com/olivierlacan/1195304), we can just set the symlink to point to the usr/local/bin folder that already exists. At the command line, run the line below. Again, just remove the '\ 2' for Sublime Text 3.
+So, following [Olivier Lacan's instructions](https://gist.github.com/olivierlacan/1195304), we can just set the symlink to point to the usr/local/bin folder that already exists. At the command line, run the line below to connect Sublime's tool to your bin folder. Again, just remove the '\ 2' for Sublime Text 3.
 
 <code class="terminal">
 $ ln -s /Applications/Sublime\ Text\ 2.app/Contents/SharedSupport/bin/subl /usr/local/bin/sublime
@@ -97,9 +96,9 @@ $ ln -s /Applications/Sublime\ Text\ 2.app/Contents/SharedSupport/bin/subl /usr/
 
 Then take a look at your bash profile to see if there's an export PATH that points to your usr/local/bin. If you don't see it, just paste this in, 
 
-```
+<code style="padding: 10px;">
 export PATH=/usr/local/bin:(...)
-```
+</code>
 
 And run this to register the changes you just made in the file:
 
