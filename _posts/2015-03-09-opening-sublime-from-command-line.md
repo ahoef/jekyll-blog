@@ -51,7 +51,7 @@ $ touch .bash_profile
 
 So when the file is open in a text editor, we have to write an alias that says 'open this with Sublime'. So paste this in, and just remove the 2 if you are using Sublime Text 3:
 
-<code style="padding: 10px;">
+<code class="single-line">
 alias sublime='open -a "Sublime Text 2"'
 </code>
 
@@ -75,7 +75,7 @@ $ sublime index.html
 
 The cool thing is that you can make your alias name anything you want&mdash; like 'blastoff', for example:
 
-<code style="padding: 10px;">
+<code class="single-line">
 alias blastoff='open -a "Sublime Text 2"'
 </code>
 
@@ -96,7 +96,7 @@ $ ln -s /Applications/Sublime\ Text\ 2.app/Contents/SharedSupport/bin/subl /usr/
 
 Then take a look at your bash profile to see if there's an export PATH that points to your usr/local/bin. If you don't see it, just paste this in, 
 
-<code style="padding: 10px;">
+<code class="single-line">
 export PATH=/usr/local/bin:(...)
 </code>
 

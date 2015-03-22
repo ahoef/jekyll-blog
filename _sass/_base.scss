@@ -93,11 +93,16 @@ code {
 //     padding: 10px;
 // }
 
-code.terminal {
-    background-color: #E4E4E4;
-    color: #888;
-    display: block;
-    padding: 10px;
+code {
+    &.terminal {
+        background-color: #E4E4E4;
+        color: #888;
+        display: block;
+        padding: 10px;
+    }
+    &.single-line {
+        padding: 10px;
+    }
 }
 
 pre {
