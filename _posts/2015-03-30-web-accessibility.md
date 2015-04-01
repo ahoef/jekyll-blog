@@ -6,6 +6,8 @@ categories: Web Accessibility
 excerpt:  In the back of my mind, I've always known that the websites I've done for fun and for work probably have had some range of accessibility issues. Last night, I took a class on the topic and learned how to run an accessibility audit on sites. The results were... scary! But thankfully, not so hard to fix.
 ---
 
+<img src="/images/voiceover.png">
+
 If you're at all like me, this is what your experience is like when you first start learning about web accessibility:
 
 <ol>
@@ -15,9 +17,9 @@ If you're at all like me, this is what your experience is like when you first st
 	<li>Take some steps to fix it</li>
 </ol>
 
-Last night I took a GDI class on the topic, taught by my friend [LeeAnn](http://www.twitter/com/_leekinney), so all of this is fresh on my mind! In the class, LeeAnn provided a wealth of information about accessibility best practices, as well as an extensive list of tools to test and improve code for better accessibility.
+Last night I took a GDI class on the topic, taught by my friend [LeeAnn](http://www.twitter.com/_leekinney), so all of this is fresh on my mind! In the class, LeeAnn provided a wealth of information about accessibility best practices, as well as an extensive list of tools to test and improve code for better accessibility.
 
-A few key takeaways &mdash;
+### A few key takeaways: ###
 
 <ul>
 	<li>Web Accessibility doesn't just mean accommodating blind or deaf users 
@@ -25,19 +27,22 @@ A few key takeaways &mdash;
 			<li>It means making sure everyone can use your site, including users with mental & physical disabilities, and users who can't afford up-to-date hardware</li>
 			<li>It encourages you to question the necessity of bells and whistles in your design</li>
 		</ul>
+		<br>
 	</li>
 
 	<li>Experiencing a site via a screen reader and auditing for accessibility should be built into regular maintenance and QA
 		<ul>
 			<li>The keyboard shortcut Command + F5 on a Mac will start the built-in osx Voice Over tool</li>
-			<li>There are many free screen readers available for non-Mac users, such as (this)[http://www.nvaccess.org/download/]</li>
+			<li>There are many free screen readers available for non-Mac users, such as <a href="http://www.nvaccess.org/download/">this</a></li>
 		</ul>
+		<br>
 	</li>
 
 	<li>Writing semantic markup gets you lots of accessibility, basically for free
 		<ul>
-			<li>Screen readers have context for each piece of content on the page, and can provide users with a better orientation about hierarchy
+			<li>Screen readers have context for each piece of content on the page, and can provide users with a better orientation about hierarchy</li>
 		</ul>
+		<br>
 	</li>
 
 	<li>Accessibility does impact the bottom line
@@ -48,7 +53,7 @@ A few key takeaways &mdash;
 	</li>
 </ul>
 
-And a few things you can start using in your code right away &mdash;
+### And a few things you can start using in your code right away: ###
 
 Alt text for images is super important:
 
@@ -71,22 +76,26 @@ Content that is hidden by the display: none CSS property does not get read by a 
 }
 {% endhighlight %}
 
+
 Opening links in new tabs is disorienting for screen reader users; include a hidden span to indicate what's happening:
 
 {% highlight html %}
-<p>Here's a paragraph with a link to <a href='http://girldevelopit.com' target='_blank'>Girl Develop It<span class="visuallyhidden"> that opens in a new window</span></a>.</p>
+<p>Here's a paragraph with a link to <a href='http://girldevelopit.com' target=
+'_blank'>Girl Develop It<span class="visuallyhidden"> that opens in a new 
+window</span></a>.</p>
 {% endhighlight %}
 
-A few really great resources &mdash;
 
-- [a11Y Project](http://a11yproject.com/)
-- [WebAIM](http://webaim.org/)
-- [Accessibility Checklist](http://design4access.nomensa.com/checklist.html)
-- [WAVE Toolbar Chrome Ext](http://wave.webaim.org/toolbar/)
-- [Chrome Color Contrast Analyzer](https://chrome.google.com/webstore/detail/color-contrast-analyzer/dagdlcijhfbmgkjokkjicnnfimlebcll?hl=en)
+### And a few really great resources: ###
+
+* [a11Y Project](http://a11yproject.com/)
+* [WebAIM](http://webaim.org/)
+* [Accessibility Checklist](http://design4access.nomensa.com/checklist.html)
+* [WAVE Toolbar Chrome Ext](http://wave.webaim.org/toolbar/)
+* [Chrome Color Contrast Analyzer](https://chrome.google.com/webstore/detail/color-contrast-analyzer/dagdlcijhfbmgkjokkjicnnfimlebcll?hl=en)
 
 
-In short, making accessible websites entails semantic development patterns and thoughtful designs, with neither of which you can really go wrong in the end. Another friend, [Lisa](http://www.twitter/com/_lisli), pointed me to this site when I was on an accessibility roll on Twitter after learning so much last night- it sums things up pretty nicely: [http://motherfuckingwebsite.com/](http://motherfuckingwebsite.com/)
+In short, making accessible websites entails semantic development patterns and thoughtful designs, with neither of which you can really go wrong in the end. Another friend, [Lisa](http://www.twitter.com/_lisli), pointed me to this site when I was on an accessibility roll on Twitter after learning so much last night- it sums things up pretty nicely: [http://motherfuckingwebsite.com/](http://motherfuckingwebsite.com/)
 
 
 

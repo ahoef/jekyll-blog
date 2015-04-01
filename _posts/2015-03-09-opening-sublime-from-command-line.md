@@ -6,6 +6,8 @@ categories: command line, sublime text, text editors, bash profile
 excerpt: If you use the command line for commiting files in version control, you probably also find yourself navigating through directories via the command line. Cd'ing into a folder and opening it in Sublime Text with a single short command can be a real handy workflow step &mdash; so here's how to do it! 
 ---
 
+<img src="/images/terminal1.png">
+
 If you use the command line for commiting files in version control, you probably also find yourself navigating through directories via the command line. Cd'ing into a folder and opening it in Sublime Text with a single short command can be a real handy workflow step. Here are two ways of setting it up on a Mac. 
 
 Since you'll need to look at your bash profile (more on that below), the first step is to configure your Finder to show hidden files. If you already see hidden files, skip this part!
