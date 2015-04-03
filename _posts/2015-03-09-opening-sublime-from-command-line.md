@@ -89,7 +89,7 @@ $ blastoff index.html
 
 ### Approach #2 &mdash; Symlink ###
 
-A symlink is similar to an alias; it's just a file that contains a reference to another file or folder. [Sublime Text's documentation](http://www.sublimetext.com/docs/2/osx_command_line.html) for using their command line tool suggests creating a symlink between the tool and a folder called ~/bin/subl. Most Mac users would already have a bin folder located in usr/local, above the root directory, so creating a new bin folder for this purpose isn't necessary.
+A symlink is similar to an alias; it's just a file that is a reference to another file or folder. [Sublime Text's documentation](http://www.sublimetext.com/docs/2/osx_command_line.html) for using their command line tool suggests creating a symlink between the tool and a folder called ~/bin/subl. Most Mac users would already have a bin folder located in usr/local, above the root directory, so creating a new bin folder for this purpose isn't necessary.
 
 So, following [Olivier Lacan's instructions](https://gist.github.com/olivierlacan/1195304), we can just set the symlink to point to the usr/local/bin folder that already exists. At the command line, run the line below to connect Sublime's tool to your bin folder. Again, just remove the '\ 2' for Sublime Text 3.
 
