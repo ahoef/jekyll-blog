@@ -9,12 +9,17 @@ layout: default
   <ul class="post-list">
     {% for post in site.posts %}
       <li>
-        <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
+        <div class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</div>
 
         <h2>
           <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
         </h2>
+        <a class="post-excerpt" href="{{ post.url | prepend: site.baseurl }}"><img class="post-image" src="{{ post.image }}"></a>
+
         <a class="post-excerpt" href="{{ post.url | prepend: site.baseurl }}">{{ post.excerpt }}</a>
+
+        <!-- <div class="divider"></div> -->
+
       </li>
     {% endfor %}
   </ul>

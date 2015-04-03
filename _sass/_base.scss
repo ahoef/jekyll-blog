@@ -55,7 +55,8 @@ li {
 }
 
 h1, h2, h3, h4, h5, h6 {
-    font-weight: 300;
+    // letter-spacing: .02em;
+    font-weight: 400;
 }
 
 a {
@@ -86,6 +87,7 @@ pre,
 code {
     font-size: 14px;
     background-color: #888;
+    border-radius: 6px;
 }
 
 // code {
