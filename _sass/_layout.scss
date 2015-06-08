@@ -70,6 +70,84 @@ h2 {
   }
 }
 
+footer {
+  padding-top:80px;
+  margin-bottom: 0px;
+  text-align: center;
+  font-size: 22px;
+  .zigzag {
+    opacity: .3;
+  }
+  ul {
+    margin: 0 auto;
+    margin-top: 30px;
+    li {
+      display: inline-block;
+      margin: 0 16px;
+      a {
+        border-bottom: none;
+      }
+      i {
+        font-size: 40px;
+      }
+    }
+  }
+}
+
+@media (max-width: 1120px) {
+
+  footer {
+    padding-top: 40px;
+  }
+
+}
+
+@media (max-width: 640px) {
+  body {
+    padding: 8px;
+  }
+  .site-header {
+    margin-bottom: 20px;
+    .hey {
+      font-size: 170px;
+    }
+    .info {
+      padding-left: 0;
+      .zigzag {
+        width: 270px;
+      }
+      h1 {
+        font-size: 25px;
+      }
+      h2 {
+        font-size: 18px;
+      }
+    }
+
+
+  }
+  nav {
+    padding-top: 20px;
+    li {
+      margin: 5px;
+      padding: 0;
+      a {
+        font-size: 14px;
+          &:hover, &.current {
+            padding-bottom: 1px;
+        }
+      }
+    }
+  }
+  footer {
+    padding-bottom: 25px;
+    .zigzag {
+      width: 270px;
+    }
+  }
+}
+
+
 // .site-title {
 //     font-size: 26px;
 //     line-height: 56px;
