@@ -3,7 +3,7 @@
   margin-left: auto;
   margin-right: auto;
   text-align: center;
-  margin-bottom: 90px;
+  margin-bottom: 80px;
   > * {
     display: inline-block;
 
@@ -13,6 +13,7 @@
     font-size: 240px;
     letter-spacing: 1px;
     line-height: 1;
+    margin-bottom: 0;
   }
   .info {
     padding-left: 25px;
@@ -20,6 +21,7 @@
     vertical-align: top;
     color: #bf97a6;
     position: relative;
+    line-height: normal;
     h1 {
   color: #bf97a6;
   font-size: 40px;
@@ -41,8 +43,10 @@ h2 {
   display: block;
   text-align: center;
   padding: 12px 0px;
+  line-height: normal;
   ul {
     margin: 0;
+    line-height: normal;
       li {
         display: inline-block;
         list-style: none;
@@ -323,9 +327,10 @@ footer {
         // margin-bottom: 90px;
         .divider {
             padding: 30px 0;
-            border-bottom: 1px solid #e8e8e8;
+            border-bottom: 2px solid;
+            opacity: .3;
             text-align: center;
-            width: 85%;
+            width: 65%;
             margin: 0 auto;
             margin-bottom: 60px;
             @include media-query($on-palm) {
