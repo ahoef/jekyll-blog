@@ -19,7 +19,7 @@ All content pages (the homepage and gateways for example) are static html includ
 
 My first pass at automation was getting [Steve](http://www.twitter.com/stevetlamb) to help me write python and shell scripts to pull data from exported .csv files and drop it into a Jinja template, which was basically a loop with some conditional logic, to churn out HTML. Check out [the code](https://github.com/ahoef/uo-marketing) if you want! It worked for a time (almost a year) in automating the bulk of the content coding, but only worked well for a specific page layout. It also required some awkward workflow steps, due to Microsoft Office's mysterious special characters.
 
-Designers wanted more flexibilty and variation in homepage and gateway layouts, which meant coming up with a new system. My boss convinced marketing folks to move from Dxcel to a Google spreadsheet so that we could use [Tabletop.js](https://github.com/jsoma/tabletop) to turn the data into a giant json object. We're using the Tabletop/Google Doc approach for the site navigation, and it's been working out pretty well. The only drawback is that Tabletop requires a public spreadsheet url (at least at the time of this writing), so the doc has to be published to the web as a read-only file.
+Designers wanted more flexibilty and variation in homepage and gateway layouts, which meant coming up with a new system. My boss convinced marketing folks to move from Excel to a Google spreadsheet so that we could use [Tabletop.js](https://github.com/jsoma/tabletop) to turn the data into a giant json object. We're using the Tabletop/Google Doc approach for the site navigation, and it's been working out pretty well. The only drawback is that Tabletop requires a public spreadsheet url (at least at the time of this writing), so the doc has to be published to the web as a read-only file.
 
 Tabletop.js integrates nicely with [Handlebars.js](http://handlebarsjs.com/), so I also moved from a single loop template in Jinja to Handlebars templates mapped to specific points in the Tabletop Object. I quickly learned that the Handlebars documentation is not indexed or searchable, and that template logic in Handlebars is kind of a pain, so if I were to start over again, I'd definitely use another templating engine, like [Nunjucks](https://mozilla.github.io/nunjucks/) or [Underscore](http://underscorejs.org/). Separating markup and functionality by limiting template logic makes sense, but at the end of the day it's less code and less headache to write a for loop within a template by declaring a one-line expression.
 
@@ -64,7 +64,7 @@ I'm thinking of this project as a fake CMS because it allows the marketing team 
 
 -It turns out that thousands of empty cells in the spreadsheet sloooooooows down the application in a real way. When I was building this, there were a number of times when I thought something was broken because code was not showing up in the console, but it turned out that the template was just taking a noticeably long time to render.
 
-https://github.com/ahoef/handlebars-tabletop-demo
+Check out [the code](https://github.com/ahoef/handlebars-tabletop-demo)!
 
 
 
