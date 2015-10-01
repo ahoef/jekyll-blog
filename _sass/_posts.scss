@@ -6,3 +6,19 @@
 		margin-bottom: $spacing-unit;	
 	}
 }
+
+.git-rebasing {
+	code:not(.terminal) {
+		background: none;
+	}
+
+	code.terminal {
+		margin-top: 8px;
+	}
+	.list-head {
+		margin-bottom: 10px;
+	}
+	.automatic-rebase-list {
+		margin-bottom: 60px;
+	}
+}
