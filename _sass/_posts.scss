@@ -3,7 +3,7 @@
 .setting-up-jekyll {
 	h1 {
 		font-family: "Lucida Console", Monaco, monospace;
-		margin-bottom: $spacing-unit;	
+		margin-bottom: $spacing-unit;
 	}
 }
 
@@ -20,5 +20,14 @@
 	}
 	.automatic-rebase-list {
 		margin-bottom: 60px;
+	}
+	ul img {
+		margin-top: 10px;
+	}
+	ul li ul li {
+		margin-bottom: 5px;
+	}
+	ul li {
+		margin-bottom: 30px;
 	}
 }
