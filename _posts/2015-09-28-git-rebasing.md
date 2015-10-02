@@ -15,9 +15,9 @@ Sure, rebasing *is* basically rewriting history, which sounds scary, but when do
 <br>
 
 ###Automatic Rebasing###
-One scenario where you might want to rebase is if you have some changes on master, and some other changes on a feature branch, and you want to port over changes from master onto your feature branch so you stay up-to-date.
+One scenario where you might want to rebase is if changes have been made on master, and you have some other changes on a feature branch, and you want to port over changes from master onto your feature branch so you stay up-to-date.
 
-From your feature branch, if you run `git pull` or `git fetch` and then `git merge` individually, you'll be thrown into Vim or another text editor you have set as default&#42; where you'll be prompted to save a merge commit message. That commit will get it's own SHA and live in your history.
+From your feature branch, if you run `git pull` or `git fetch` and then `git merge` individually, you'll be thrown into Vim or another text editor you have set as default&#42; where you'll be prompted to save a merge commit message. That commit will get its own SHA and live in your history.
 
 See this visual example from the excellent Atlassian article, ['Merging Vs. Rebasing'](https://www.atlassian.com/git/tutorials/merging-vs-rebasing/conceptual-overview)
 
@@ -50,15 +50,15 @@ $ git rebase --continue
 <p class="list-head">So 3 main things happen with that rebase above:</p>
 <ul class="automatic-rebase-list">
 <li>All changes that are are not in origin/master get moved to a temporary area (the tip)</li>
-<li>All origin/master commits are run one at a time</li>
-<li>All commits in temporary area are run one at a time</li>
+<li>All origin/master commits are applied one at a time</li>
+<li>All commits in temporary area are applied one at a time</li>
 </ul>
 
 
 ###Interactive Rebasing###
 Another scenario where you might want to rebase is if you have some non-semantic or fragmented commits on your local branch and you want to tidy them up.
 
-If you're thinking of your git history in terms of diary entries vs a narrative, these commits for when you forgot to add one file, or for when you fixed a typo, are like the diary entries for when you lost a sock in the laundry or stepped in a puddle. Not so significant, and not something you really want to be a part of your biography. So you can use interactive rebasing to rewrite your local branch's commit history so that it is succint and meaningful.
+If you're thinking of your git history in terms of diary entries vs a narrative, these commits for when you forgot to add one file, or for when you fixed a typo, are like the diary entries for when you lost a sock in the laundry or stepped in a puddle. Not so significant, and not something you really want to be a part of your biography. So you can use interactive rebasing to rewrite your local branch's commit history so that it is succinct and meaningful.
 
 To start an interactive rebase, check your log (`git log`) and think about how far back you want to start doctoring things up. If you want to rebase the last 3 commits, run
 <code class="terminal">
@@ -130,4 +130,4 @@ $ git config --global core.editor &lt;text editor&gt;
 
 I actually don't recommend passing in Sublime here, even though I love Sublime and use it every day, because writing out and saving files doesn't really work well. If you don't like the terminal's default editor Vim, I recommend nano, which is another built in Unix text editor that keeps you right in the terminal.
 
-&#42;&#42; In this screenshot, you'll see that I'm rebasing on master. This is because this project was a little demo app that I was the only perso working on. If you're collaborating with other developers on a project, make sure to only rebase on your own branch, never on master!
+&#42;&#42; In this screenshot, you'll see that I'm rebasing master. This is because this project was a little demo app that I was the only person working on. If you're collaborating with other developers on a project, make sure to only rebase your own branch, never master!
