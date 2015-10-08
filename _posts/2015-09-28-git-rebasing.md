@@ -32,7 +32,7 @@ $ git fetch
 
 Rebase:
 <code class="terminal">
-$ git rebase
+$ git rebase origin/master
 </code>
 
 If there are merge conflicts, resolve them in the files.
