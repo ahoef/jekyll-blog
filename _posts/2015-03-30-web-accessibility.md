@@ -2,7 +2,7 @@
 layout: post
 title:  "Doing a Better Job at Web Accessibility"
 date:   2015-03-30
-categories: Web Accessibility
+categories:
 excerpt:  In the back of my mind, I've always known that the websites I've done for fun and for work probably have had some range of accessibility issues. Last night, I took a class on the topic and learned how to run an accessibility audit on sites. The results were... scary! But thankfully, not so hard to fix.
 image: "/images/voiceover.png"
 ---

@@ -2,7 +2,7 @@
 layout: post
 title:  "Opening Sublime Text from the Command Line"
 date:   2015-03-09
-categories: command line, sublime text, text editors, bash profile
+categories:
 excerpt: If you use the command line for commiting files in version control, you probably also find yourself navigating through directories via the command line. Cd'ing into a folder and opening it in Sublime Text with a single short command can be a real handy workflow step &mdash; so here's how to do it! 
 image: "/images/sublime.png"
 ---

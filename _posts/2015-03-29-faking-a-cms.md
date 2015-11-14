@@ -2,7 +2,7 @@
 layout: post
 title:  "Faking a CMS with Tabletop.js & Handlebars.js"
 date:   2015-03-20
-categories: CMS, javascript, templating
+categories:
 excerpt: Each week, UrbanOutfitters.com publishes over a hundred new marketing messages across its homepage and gateway pages. And believe it or not, there's no front-end CMS for it! For years, all of the site's marketing content &mdash; copy, links, images &mdash; has been hardcoded by hand in HTML files. So here's the story of how I came up with a makeshift CMS!
 image: "/images/uo.png"
 ---

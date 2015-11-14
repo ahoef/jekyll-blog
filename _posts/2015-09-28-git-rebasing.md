@@ -2,7 +2,7 @@
 layout: post
 title:  "Git Rebasing"
 date:   2015-09-28
-categories: Git
+categories:
 excerpt:  I recently heard something along the lines of how the history of your codebase in version control should not be a list of log entries, but rather a biography of your code. Here's a quick rundown of what rebasing is in git, and how it can help cut out commit cruft so that your repo tells a more compelling story.
 image: "/images/rebase-script.png"
 ---

@@ -2,7 +2,7 @@
 layout: post
 title:  "Orientation Media Queries"
 date:   2015-02-25
-categories: rwd, media queries
+categories:
 excerpt: Today I ran into a situation where I needed to use orientation media queries, which was a first!  I've used many media queries based on screen width, but until today I had no idea that CSS3 includes specs on screen landscape or portrait orientation.
 image: "http://developer.android.com/design/media/devices_displays_main.png"
 ---
