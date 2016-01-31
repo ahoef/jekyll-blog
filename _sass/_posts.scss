@@ -34,3 +34,21 @@
 		margin-bottom: 30px;
 	}
 }
+
+.three-implementations-of-a-flashcard-app {
+	h3 {
+		color: #888;
+		a {
+			color: #888;
+			border-bottom: 1px solid;
+			&:hover {
+				border-bottom: none;
+			}
+		}
+	}
+
+	code {
+		padding: 5px 10px
+	}
+
+}
