@@ -19,7 +19,20 @@ In this spirit of exploration, I worked on a few of my own JavaScript framework 
 
 For this version I used Babel & Browserify to transpile JavaScript so that I could use ES2015 syntax and features such as import/export statements, classes, promises, template strings, & arrow functions.  
 
-There are a number of starter repos for build setups, but I started with Code School's [babel-with-gulp](https://github.com/codeschool/babel-with-gulp) repo to avoid some potential headaches with getting code to transpile. The gulpfile in that repo only builds JS, so I added in functionality to watch JS files and also to compile & watch Sass files. From there I started building out a basic MVC pattern, where a controller's promise chain calls model methods and ultimately renders out the view. 
+There are a number of starter repos for build setups, but I started with Code School's [babel-with-gulp](https://github.com/codeschool/babel-with-gulp) repo to avoid some potential headaches with getting code to transpile. The gulpfile in that repo only builds JS, so I added in functionality to watch JS files and also to compile & watch Sass files. From there I started building out a basic MVC pattern, where a controller's promise chain calls model methods and ultimately renders out the view. This is what the <code>.render</code> method looks like:
+
+    render(model, action){
+        model.generateRandomNum()
+            .then( number => {
+                return model.addIndexToOrderArray(number, action);
+            })
+            .then( data => {
+                return model.attachContentToDOM(action);
+            })
+            .catch( error => {
+                console.log(error);
+            })
+    } 
 
 Out of the 3 flashcard apps, this one has by far the smallest JS file size. The large majority of the total file size comes from jQuery (86K), and I could easily trim that out by using native selectors & event handling. 
 
@@ -33,9 +46,37 @@ Out of the 3 flashcard apps, this one has by far the smallest JS file size. The 
 
 Back in August 2015, Henrik Joreteg [wrote about Redux](https://blog.andyet.com/2015/08/06/what-the-flux-lets-redux/) when it was just barely a thing. Even as such, he described Redux as a gamechanger in the JavaScript world, to the likes of jQuery, Backbone, and Node when they first emerged. And Joreteg is among a large group of Redux believers taking the internet by storm.  
 
-Joreteg's main argument for hyping Redux is that state management in single-page applications 'is hard', and that with MVC patterns 'It’s still very easy to make a mess of your app.' Redux offers an opinionated, functional-based solution to this state problem by using a single store for your tree of observable objects, as opposed to patterns that use multiple stores, like Flux. You can think of this single store as a function that takes an action and a state as arguments, and returns a new state. So there aren't competing features in your application that claim a stake in your state; they all have to answer to Redux, the state gatekeeper. 
+Joreteg's main argument for hyping Redux is that state management in single-page applications 'is hard', and that with MVC patterns 'It’s still very easy to make a mess of your app.' Redux offers an opinionated, functional-based solution to this state problem by using a single store for your tree of observable objects, as opposed to patterns that use multiple stores, like Flux. You can think of this single store as a function that takes an action and a state as arguments, and returns a new state via a reducer function. 
 
-So in theory, this is good. But building a web app with [Redux](https://github.com/rackt/redux), paired with React, which is also very opinionated, was a lot harder than I expected. I don't think that the hurdles came from Redux though; they came from React. This was my first time using React, and I have a lot more to learn. I found myself struggling with the scrambled HTML, JS, and CSS, but I do see the advantages of standalone components. 
+Here's a basic action from my app. Per Redux conventions, an action is just a function that returns an object that describes a state change:
+
+	export function showAnswer() {
+	    return { 
+	        type: 'SHOW_ANSWER'
+	    }
+	}
+
+And here's the app reducer, which takes the action and current state, and returns a new state object:
+
+	function changeState(state = initialState, action) {
+	    switch (action.type) {
+	        case 'SHOW_ANSWER':
+	            return Object.assign({}, state, {
+	                answerHidden: false,
+	                nextCard: false
+	            })
+	        case 'NEXT_CARD':
+	            return Object.assign({}, state, {
+	                answerHidden: true,
+	                nextCard: true
+	            })
+	        default:
+	            return state;
+	    }
+	}
+
+
+So there aren't competing features in your application that claim a stake in your state; they all have to answer to Redux, the gatekeeper of a single state. In theory, this is good. But building a web app with [Redux](https://github.com/rackt/redux), paired with React, which is also very opinionated, was a lot harder than I expected. I don't think that the hurdles came from Redux though; they came from React. This was my first time using React, and I have a lot more to learn. I found myself struggling with the scrambled HTML, JS, and CSS, but I do see the advantages of standalone components. 
 
 Because this version of the app required more dependencies (React, ReactDOM, Redux), the final JS file size ended up being large.  
 
@@ -113,9 +154,9 @@ The initial load of this version of the flashcard app is noticeably slower than 
 
 ###In a nutshell###
 
-Ultimately I liked making the Angular 2 flashcard app the best! I found that out of the three, it was the quickest to get up and running, and the most enjoyable to build. Angular 2 is still in beta though, so adopting it for high-profile production sites right now could be hairy, especially because of the required polyfills. 
+Ultimately I liked making the Angular 2 flashcard app the best! I found that out of the three, it was the quickest to get up and running, and the most enjoyable to build. But I should note that I do have a fairly extensive background in Angular 1, so I wasn't learning the framework from scratch with this app. And although it was fun to work with, Angular 2 is still in beta, so adopting it for high-profile production sites right now could be hairy, especially because of the required polyfills.
 
-I might run for the hills if someone asks me to write React code. JK! I have a lot more to learn with React, and I look forward to it. Redux is huge part of my life now, since we ended up opting for Redux as a key player in this project at work. Only a few weeks into development, and we've already got a lot of takeaways. For example, we learned that out-of-the-box Redux does not handle async functions all that well, so we've implemented [sagas](https://github.com/yelouafi/redux-saga) for a generator-based approach. 
+As for React, I still have much more to learn, and I look forward to gaining more expertise with it. I'm gradually becoming more familiar with Redux, as it was chosen as a key player in this project at work. Only a few weeks into development, my team has found a number of takeaways. For example, we learned that out-of-the-box Redux does not handle async functions all that well, so we've implemented [sagas](https://github.com/yelouafi/redux-saga) for a generator-based approach. We've also learned that the state object can grow very quickly, so it's important to limit top-level properties early on.  
 
 And while I really like using ES2015 syntax and features in my code, I can't see myself ever opting to build a large-scale MVC framework with vanilla JS, as the view layer can get very unweildy very fast. 
 
