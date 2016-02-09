@@ -3,21 +3,21 @@ layout: post
 title:  "Three Implementations of a Flashcard App"
 date:   2016-01-05
 categories:
-excerpt: "To see the differences between frameworks, I recently built the same web app in vanilla ES2015, React & Redux, and Angular 2. It's a basic flashcard app, where users can paginate forward and backward through cards, and click to reveal answers. I had a lot of fun cooking up some fancy Sass mixins, but the real gain in this project was thinking about the same data modeling in three different ways." 
+excerpt: "To see the differences between frameworks, I recently built the same web app in vanilla ES6, React & Redux, and Angular 2. It's a basic flashcard app, where users can paginate forward and backward through cards, and click to reveal answers. I had a lot of fun cooking up some fancy Sass mixins, but the real gain in this project was thinking about the same data modeling and event streams in three different ways." 
 image: "/images/flashcard-app.png"
 ---
 
 Last month I started a new project at work, the magnitude of which is greater than anything else I've worked on in the past! One of the first and most important steps in tackling this huge project was to decide on a tech stack that best meets the business' needs as a global e-commerce company. So in recent weeks, I, along with a team of other developers at URBN, have had the opportunity to take several languages and frameworks for a test drive to evaluate pros and cons.
 
-In this spirit of exploration, I worked on a few of my own JavaScript framework prototypes outside of work - I built the same web app in vanilla ES2015, React & Redux, and Angular 2. It's a basic flashcard app, where users can paginate forward and backward through cards, and click to reveal answers. I had a lot of fun cooking up some fancy Sass mixins, but the real gain in this project was thinking about the same data modeling in three different ways. 
+In this spirit of exploration, I worked on a few of my own JavaScript framework prototypes outside of work - I built the same web app in vanilla ES6, React & Redux, and Angular 2. It's a basic flashcard app, where users can paginate forward and backward through cards, and click to reveal answers. I had a lot of fun cooking up some fancy Sass mixins, but the real gain in this project was thinking about the same data modeling and event streams in three different ways. 
 
 <img src="/images/flashcard-app.png">
 
 <br>
 
-###Version 1: [JavaScript Flashcards](http://www.ahoef.co/js-flashcards), built with vanilla ES2015 & jQuery###
+###Version 1: [JavaScript Flashcards](http://www.ahoef.co/js-flashcards), built with vanilla ES6 & jQuery###
 
-For this version I used Babel & Browserify to transpile JavaScript so that I could use ES2015 syntax and features such as import/export statements, classes, promises, template strings, & arrow functions.  
+For this version I used Babel & Browserify to transpile JavaScript so that I could use ES6 syntax and features such as import/export statements, classes, promises, template strings, & arrow functions.  
 
 There are a number of starter repos for build setups, but I started with Code School's [babel-with-gulp](https://github.com/codeschool/babel-with-gulp) repo to avoid some potential headaches with getting code to transpile. The gulpfile in that repo only builds JS, so I added in functionality to watch JS files and also to compile & watch Sass files. From there I started building out a basic MVC pattern, where a controller's promise chain calls model methods and ultimately renders out the view. This is what the <code>.render</code> method looks like:
 
@@ -37,7 +37,7 @@ There are a number of starter repos for build setups, but I started with Code Sc
 Out of the 3 flashcard apps, this one has by far the smallest JS file size. The large majority of the total file size comes from jQuery (86K), and I could easily trim that out by using native selectors & event handling. 
 
 **Compiled JS:** 100K <br>
-**Source Code:** [https://github.com/ahoef/es2015-flashcard-app](https://github.com/ahoef/es2015-flashcard-app)
+**Source Code:** [https://github.com/ahoef/ES6-flashcard-app](https://github.com/ahoef/ES6-flashcard-app)
 <br>
 <br>
 
@@ -158,7 +158,7 @@ Ultimately I liked making the Angular 2 flashcard app the best! I found that out
 
 As for React, I still have much more to learn, and I look forward to gaining more expertise with it. I'm gradually becoming more familiar with Redux, as it was chosen as a key player in this project at work. Only a few weeks into development, my team has found a number of takeaways. For example, we learned that out-of-the-box Redux does not handle async functions all that well, so we've implemented [sagas](https://github.com/yelouafi/redux-saga) for a generator-based approach. We've also learned that the state object can grow very quickly, so it's important to limit top-level properties early on.  
 
-And while I really like using ES2015 syntax and features in my code, I can't see myself ever opting to build a large-scale MVC framework with vanilla JS, as the view layer can get very unweildy very fast. 
+And while I really like using ES6 syntax and features in my code, I can't see myself ever opting to build a large-scale MVC framework with vanilla JS, as the view layer can get very unweildy very fast. 
 
 That's all for now... next up is a flashcard app in [Elm](http://elm-lang.org/)! Stay tuned! 
 
